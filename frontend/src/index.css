@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --canvas: #f6f7f2;
+  --panel: rgba(255, 255, 255, 0.72);
+  --panel-strong: rgba(255, 255, 255, 0.92);
+  --line: rgba(18, 32, 43, 0.08);
+  --line-strong: rgba(18, 32, 43, 0.16);
+  --text: #12202b;
+  --muted: #5e6c76;
+  --brand: #17b79c;
+  --brand-soft: #e8f7f2;
+  --brand-blue: #5aa8f4;
+  --proof: #c9d4ff;
+  --ok: #2fb36f;
+  --warn: #f1b44c;
+  --danger: #e66a5f;
+  --radius: 1rem;
+}
+
+html,
+body {
+  min-height: 100vh;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Manrope", system-ui, sans-serif;
+  background: var(--canvas);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(23, 183, 156, 0.28);
+  color: #0d1a23;
+}
+
+::-moz-selection {
+  background: rgba(23, 183, 156, 0.28);
+  color: #0d1a23;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+code,
+.font-mono {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.font-display {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.bg-grid-soft {
+  background-image:
+    linear-gradient(rgba(18, 32, 43, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 32, 43, 0.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.24) 72%, transparent 100%);
+}
+
+.noise-overlay {
+  background-image:
+    radial-gradient(circle at 24% 18%, rgba(23, 183, 156, 0.09), transparent 32%),
+    radial-gradient(circle at 82% 30%, rgba(90, 168, 244, 0.08), transparent 28%),
+    radial-gradient(circle at 52% 100%, rgba(201, 212, 255, 0.14), transparent 34%);
+}
+
+.surface-glass {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78) 0%, rgba(255, 255, 255, 0.62) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 22px 48px rgba(18, 32, 43, 0.08);
+  backdrop-filter: blur(20px);
+}
+
+.surface-card {
+  background: var(--panel-strong);
+  border: 1px solid var(--line);
+  box-shadow: 0 14px 36px rgba(18, 32, 43, 0.06);
+}
+
+.surface-muted {
+  background: rgba(255, 255, 255, 0.54);
+  border: 1px solid rgba(18, 32, 43, 0.06);
+}
+
+.shadow-premium {
+  box-shadow: 0 22px 48px rgba(18, 32, 43, 0.12);
+}
+
+.shadow-soft {
+  box-shadow: 0 10px 24px rgba(18, 32, 43, 0.07);
+}
+
+.text-gradient-brand {
+  background: linear-gradient(135deg, #17b79c 0%, #5aa8f4 54%, #8295ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.typewriter-caret::after {
+  content: "";
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  margin-left: 5px;
+  background: var(--brand);
+  vertical-align: -0.12em;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 11px;
+  height: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(18, 32, 43, 0.04);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(18, 32, 43, 0.14);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(23, 183, 156, 0.28);
+  background-clip: padding-box;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 75 22% 96%;
+    --foreground: 206 39% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 206 39% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 206 39% 12%;
+    --primary: 169 77% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 25% 95%;
+    --secondary-foreground: 206 39% 12%;
+    --muted: 210 24% 95%;
+    --muted-foreground: 206 14% 46%;
+    --accent: 169 49% 94%;
+    --accent-foreground: 169 77% 28%;
+    --destructive: 6 72% 64%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 206 18% 86%;
+    --input: 206 18% 86%;
+    --ring: 169 77% 40%;
+    --radius: 1rem;
+  }
+}
