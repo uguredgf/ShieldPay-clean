@@ -1,4 +1,4 @@
-# ShieldPay
+﻿# ShieldPay
 
 ShieldPay is a private payroll workspace built around three connected roles:
 
@@ -46,12 +46,16 @@ The current experience focuses on:
 ## Repository Structure
 
 ```text
-ShieldPay/
-├─ frontend/                     React application and UI flows
-├─ contracts/stellar-private-payments/
-├─ stellar-private-payments/     Upstream protocol/reference code
-├─ package.json                  Root package metadata
-└─ README.md
+ShieldPay-clean/
+├─ frontend/                   React application and UI flows
+├─ contracts/
+│  ├─ asp_contract/
+│  ├─ pool_contract/
+│  └─ verifier_contract/
+├─ stellar-private-payments/   Privacy and protocol reference code
+├─ PRESENTATION_OUTLINE.md
+├─ README.md
+└─ .gitignore
 ```
 
 ## Frontend Stack
@@ -91,10 +95,10 @@ npm start
 npm run build
 ```
 
-## Current Notes
+## Notes
 
 - The UI is customer-facing and presentation-ready.
-- Some underlying blockchain interactions still use local fallback behavior when a full on-chain path is unavailable.
+- Some blockchain interactions still use local fallback behavior when a full on-chain path is unavailable.
 - The product currently targets `Stellar Testnet`.
 
 ## Suggested Demo Narrative
@@ -102,12 +106,6 @@ npm run build
 If you are presenting ShieldPay live, the cleanest order is:
 
 1. Open the `Employer` view and load the payroll batch
-2. Show the proof / secret distribution readiness
+2. Show the proof and secret distribution readiness
 3. Switch to `Employee` and complete a claim with an employee secret
 4. Switch to `Regulator` and show the policy timeline and export
-
-## Next Delivery Items
-
-- GitHub-ready repository cleanup
-- presentation deck based on the provided template
-- optional live demo script and speaker notes

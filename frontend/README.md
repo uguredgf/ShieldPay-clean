@@ -1,12 +1,12 @@
-# ShieldPay Frontend
+﻿# ShieldPay Frontend
 
 This folder contains the customer-facing React application for ShieldPay.
 
 ## Main Views
 
-- `Employer` — prepare payroll batches and distribute employee secrets
-- `Employee` — validate a secret and continue the claim flow
-- `Regulator` — manage policy actions and review the audit timeline
+- `Employer` - prepare payroll batches and distribute employee secrets
+- `Employee` - validate a secret and continue the claim flow
+- `Regulator` - manage policy actions and review the audit timeline
 
 ## Tech
 
